@@ -24,12 +24,12 @@ define Package/hello_feeds/description
 endef
 
 define Build/Compile
-	$(MAKE) CC=$(TARGET_CC) -C $(PKG_BUILD_DIR)/$(PKG_NAME)/
+	$(MAKE) CC=$(TARGET_CC) -C $(PKG_BUILD_DIR)/
 endef
 
 define Package/hello_feeds/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME)/hello $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello $(1)/usr/bin/
 endef
 
 $(eval $(call BuildPackage,hello_feeds))
